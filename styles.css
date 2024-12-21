@@ -36,9 +36,7 @@ body{
 }
 
 .profile-body{
-    /* height: 80vh; */
-    padding: 40px 70px;
-    /* border: 1px solid red; */
+    padding: clamp(20px, 5vw, 70px);
     background-color: hsl(0, 0%, 12%);
     border-radius: 20px;
 }
@@ -51,7 +49,6 @@ body{
 }
 
 .profile-pic{
-    /* display: inline-block; */
     width: 100px;
     border-radius: 50%;
     margin-block-end: 1rem;
@@ -69,7 +66,6 @@ body{
 .profile-links-btns{
     display: flex;
     flex-direction: column;
-    /* padding: 20px; */
     align-items: center;
     padding-block-start: 1rem;
     
@@ -78,18 +74,33 @@ body{
 .profile-links-btns a{
     display: block;
     width: 100%;
-    padding: 15px 90px;
-    /* padding: .7rem 2.8rem; */
+    padding: 15px clamp(30px, 10vw, 90px);
     margin: 10px;
     text-align: center;
     text-decoration: none;
     background-color: hsl(0, 0%, 20%);
     color: white;
     border-radius: 5px;
-    transition: background-color 600ms ease-in-out, transform 600ms ease-in-out;
+    font-weight: 700;
+    transition: background-color 600ms ease-in-out, transform 600ms ease-in-out, color 600ms ease;
 }
 
-.profile-links-btns a:hover{
-    background-color: hsl(75, 94%, 57%);
-    transform: translateY(-3px)
+
+
+@media (max-width: 600px) {
+    .profile-body {
+        padding: 20px 15px;
+    }
+
+    .profile > h1 {
+        font-size: 1.5rem;
+    }
+}
+
+@media (hover: hover) {
+    .profile-links-btns a:hover{
+        background-color: hsl(75, 94%, 57%);
+        transform: translateY(-3px);
+        color: black;
+    }
 }
